@@ -1,0 +1,19 @@
+[package]
+name = "aether-crypto"
+version = "0.1.0"
+edition = "2021"
+description = "Cryptography primitives for Aether"
+
+[dependencies]
+aes-gcm = "0.10"
+ed25519-dalek = { version = "2", features = ["zeroize"] }
+hkdf = "0.12"
+hmac = "0.12"
+postcard = { version = "1", features = ["alloc"] }
+rand_core = { version = "0.6", features = ["getrandom"] }
+serde = { version = "1", features = ["derive"] }
+sha2 = "0.10"
+# Exact pin: review src/noise_split.rs and risky-raw-split before any upgrade.
+snow = { version = "=0.10.0", features = ["risky-raw-split"] }
+x25519-dalek = { version = "2", features = ["static_secrets"] }
+zeroize = { version = "1", features = ["derive"] }
